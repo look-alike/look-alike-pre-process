@@ -17,9 +17,9 @@ keyword = input("검색할 이름을 입력하세요: ")
 keyword_to_english = ''
 if keyword == "송혜교": 
   keyword_to_english = 'shg'
-elif keyword == "배우 이도현":
+elif keyword == "이도현":
   keyword_to_english = 'idh'
-elif keyword == '배우 임지연':
+elif keyword == '임지연':
   keyword_to_english = 'ijh'
 elif keyword == '신예은':
   keyword_to_english = 'she'
@@ -29,7 +29,7 @@ chrome_options = webdriver.ChromeOptions()
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
 # 저장할 디렉토리명
-save_path = '/Users/jang-youngjoon/dev-projects/youtuber-look-alike/dummy-img'
+save_path = '/Users/jang-youngjoon/dev-projects/youtuber-look-alike/crawled-image'
 
 # 제일 아래까지 스크롤 -> 항목 높이기
 def selenium_scroll_option():
@@ -63,7 +63,7 @@ for image in images:
   if image:
     # image.send_keys(Keys.ENTER) #.click() 말고 send_keys(Keys.ENTER)로 변경
     driver.execute_script("arguments[0].click();", image)
-    time.sleep(2)
+    time.sleep(3)
     imageUrl = driver.find_element(By.XPATH,'//*[@id="Sva75c"]/div[2]/div/div[2]/div[2]/div[2]/c-wiz/div/div[1]/div[2]/div[2]/div/a/img')
     if imageUrl:
       if (imageUrl.get_attribute('src') == None):
