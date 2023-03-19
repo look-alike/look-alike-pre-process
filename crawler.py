@@ -23,6 +23,8 @@ elif keyword == '임지연':
   keyword_to_english = 'ijh'
 elif keyword == '신예은':
   keyword_to_english = 'she'
+elif keyword == '손명오':
+  keyword_to_english = 'smo'
 
 # selenium option
 chrome_options = webdriver.ChromeOptions()
