@@ -11,7 +11,7 @@ file_list = os.listdir(folder_path)
 # 파일 이름 변경
 for i, file_name in enumerate(sorted(file_list)):
     # 파일 이름 생성
-    new_file_name = prefix + str(i).zfill(padding_width) + extension
+    new_file_name = prefix + str(i + 1).zfill(padding_width) + extension
 
     # 파일 이름 변경
     os.rename(os.path.join(folder_path, file_name), os.path.join(folder_path, new_file_name))

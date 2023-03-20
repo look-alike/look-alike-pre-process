@@ -78,7 +78,7 @@ for image in images:
     break
 
 for image_url in images_url_list:
-  file_name = "image" + '_' + keyword_to_english + '_' + str(count) + ".jpg"
+  file_name = keyword_to_english + '_' + str(count) + ".jpg"
   file_place = os.path.join(save_path, file_name)
   urllib.request.urlretrieve(image_url, file_place)
   print(f"Image saved: {count}")
